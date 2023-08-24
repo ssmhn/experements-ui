@@ -3,6 +3,7 @@ import classes from './Aside.module.scss'
 import {CloseAsideIcon} from "../../icons/CloseAsideIcon"
 import {useAnimate} from "framer-motion"
 import cn from 'classnames'
+import {Profile} from "../Profile/Profile";
 
 interface AsideProps {
     className?: string
@@ -11,20 +12,23 @@ interface AsideProps {
 export const Aside: FC<PropsWithChildren<AsideProps>> = () => {
     const [isOpened, setIsOpened] = useState(true)
     const [scope, animate] = useAnimate()
+    const [profileVisible, setProfileVisible] = useState(true)
 
     const animation = async () => {
-        setIsOpened(prev => !prev)
+        setIsOpened(prev => !prev);
+        setProfileVisible(p => !p)
 
         await animate(
             scope.current,
-            { width: isOpened ? '80px' : '240px' },
+            {width: isOpened ? '80px' : '240px'},
             {
                 duration: 0.2,
                 type: 'spring',
                 stiffness: 70
             }
         )
-    }
+    };
+
 
     return (
         <div
@@ -35,7 +39,16 @@ export const Aside: FC<PropsWithChildren<AsideProps>> = () => {
                 onClick={animation}
                 className={cn(classes.Close, {[classes.Closed]: !isOpened})}
             >
-                <CloseAsideIcon />
+                <CloseAsideIcon/>
+            </div>
+
+            <div className={classes.Profile}>
+                {profileVisible && (
+                    <Profile
+                        user={{firstName: "Усманов", lastName: "Руasdfsdfsdfgслан", email: "crowsdfsdfsdfruuu@gmail.com"}}
+                        isOpened={isOpened}
+                    />
+                )}
             </div>
         </div>
     )

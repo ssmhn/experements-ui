@@ -1,0 +1,90 @@
+@import '../../../css/common';
+
+.Profile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: $text;
+  box-shadow: $shadow;
+  transition: all .2s ease;
+  opacity: 1;
+
+  &Closed {
+    opacity: 0;
+    transition: all .2s ease;
+  }
+}
+
+.ProfileCard {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ProfileAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: $divider;
+  font-weight: 600;
+  color: $text;
+}
+
+.ProfileInfo {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .UserName {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .UserEmail {
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+
+.ProfileLogOutButton {
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  padding-left: 20px;
+  gap: 15px;
+  color: #292929;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  background: $primary;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all .1s ease;
+
+  &:hover {
+    background: $primaryHover;
+  }
+}
+
+
+

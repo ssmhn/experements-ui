@@ -1,0 +1,33 @@
+@import "../../../css/common.scss";
+
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: 420px;
+  gap: 20px;
+  align-items: center;
+}
+label {
+  width: 100%;
+}
+
+.Input {
+  font-size: 18px;
+  color: $text;
+  padding-left: 20px;
+  width: 100%;
+  height: 50px;
+  border-radius: 40px;
+  border: 2px solid $divider;
+}
+
+.Button {
+  width: fit-content;
+  font-weight: 600;
+  font-size: 32px;
+  padding: 5px 10px;
+  border: 4px solid $divider;
+  border-radius: 30px;
+  color: $divider;
+  cursor: pointer;
+}

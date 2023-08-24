@@ -1,0 +1,96 @@
+@import '../../../css/common';
+
+.CustomSelect {
+  position: relative;
+  width: 240px;
+}
+
+.CurrentSelect {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 17px;
+  background: #2f2f2f;
+  border-radius: 12px;
+  border: 1px solid rgba($primary, .6);
+  cursor: pointer;
+  transition: all .2s ease;
+  height: 56px;
+
+  &:hover {
+    border-color: $primary;
+  }
+
+  svg {
+    transition: all .2s ease;
+  }
+
+  &.Visible {
+    border-color: $primary;
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.Title {
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.Value {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.Options {
+  position: absolute;
+  width: 100%;
+  top: calc(100% + 5px);
+  left: 0;
+  background: #2f2f2f;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 180px;
+  overflow-y: auto;
+  border: 1px solid rgba($primary, .6);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .2s ease;
+
+  &.Visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.OptionsWrapper {
+  height: fit-content;
+}
+
+.Option {
+  cursor: pointer;
+  transition: all .2s ease;
+  padding: 10px 17px;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 12px;
+
+  &:hover {
+    background: $primaryHover;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}

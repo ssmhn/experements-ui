@@ -1,0 +1,29 @@
+@import '../../../css/common';
+
+.Layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-bottom: 24px;
+}
+
+.ContentWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.Main {
+  width: 100%;
+  flex: 1;
+  padding: 24px 24px 0 24px;
+  overflow: hidden;
+}
+
+.Wrapper {
+  height: 100%;
+  overflow-y: auto;
+  background: $content;
+  border-radius: 16px;
+  padding: 32px 24px;
+}

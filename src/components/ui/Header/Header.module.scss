@@ -1,0 +1,26 @@
+@import '../../../css/common';
+
+.Header {
+  width: 100%;
+  padding: 40px 24px 40px 48px;
+  border-bottom: 1px solid $divider;
+}
+
+.Date {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 16px;
+  }
+
+  span {
+    color: $text;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+}

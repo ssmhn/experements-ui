@@ -1,6 +1,5 @@
 import React from 'react';
 import {Layout} from "./components/global/Layout/Layout"
-import {StartPage} from "./startPage/StartPage"
 import {Link, Routes, Route} from "react-router-dom";
 import {Login} from "./components/ui/Login/Login";
 import {Register} from "./components/ui/Register/Register";

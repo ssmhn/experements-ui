@@ -45,7 +45,7 @@ export const Aside: FC<PropsWithChildren<AsideProps>> = () => {
             <div className={classes.Profile}>
                 {profileVisible && (
                     <Profile
-                        user={{firstName: "Усманов", lastName: "Руasdfsdfsdfgслан", email: "crowsdfsdfsdfruuu@gmail.com"}}
+                        user={{firstName: "Мотя", lastName: "Леймик", email: "test@test.com"}}
                         isOpened={isOpened}
                     />
                 )}

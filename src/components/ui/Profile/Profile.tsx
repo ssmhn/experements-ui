@@ -2,6 +2,7 @@ import classes from './Profile.module.scss'
 import React, {FC, PropsWithChildren} from "react"
 import {LogOutIcon} from "../../icons/LogOutIcon"
 import {Link} from "react-router-dom";
+import {motion} from "framer-motion";
 
 interface User {
     firstName: string
@@ -16,7 +17,24 @@ interface ProfileProps {
 
 export const Profile: FC<PropsWithChildren<ProfileProps>> = ({isOpened, user}) => {
     return (
-        <div className={classes.Profile}>
+        <motion.div
+            initial={{
+                opacity: 0
+            }}
+            animate={{
+                opacity: 1,
+                transition: {
+                    duration: 0.2
+                }
+            }}
+            exit={{
+                opacity: 0,
+                transition: {
+                    duration: 0.2
+                }
+            }}
+
+            className={classes.Profile}>
 
             <div className={classes.ProfileCard}>
 
@@ -45,6 +63,6 @@ export const Profile: FC<PropsWithChildren<ProfileProps>> = ({isOpened, user}) =
                 <p>Выйти</p>
             </Link>
 
-        </div>
+        </motion.div>
     )
 }

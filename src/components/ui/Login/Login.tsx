@@ -26,50 +26,52 @@ export const Login: FC<PropsWithChildren<LoginProps>> = ({}) => {
 
 
     return (
-        <form className={classes.FormContainer}>
-            <h1>Login</h1>
+      <div className={classes.Wrapper}>
+          <form className={classes.FormContainer}>
+              <h1>Login</h1>
 
-            <label>
-                <input
-                    className={classes.Input}
-                    value={user.login}
-                    type="text"
-                    name={"login"}
-                    placeholder={"Username"}
-                    onChange={(e) => {
-                        handleChangeInputs(e)
-                    }}
-                />
+              <label>
+                  <input
+                      className={classes.Input}
+                      value={user.login}
+                      type="text"
+                      name={"login"}
+                      placeholder={"Username"}
+                      onChange={(e) => {
+                          handleChangeInputs(e)
+                      }}
+                  />
 
-            </label>
+              </label>
 
-            <label>
-                <input
-                    className={classes.Input}
-                    value={user.password}
-                    type="password"
-                    name={"password"}
-                    placeholder={"Password"}
-                    onChange={(e) => {
-                        handleChangeInputs(e)
-                    }}
-                />
+              <label>
+                  <input
+                      className={classes.Input}
+                      value={user.password}
+                      type="password"
+                      name={"password"}
+                      placeholder={"Password"}
+                      onChange={(e) => {
+                          handleChangeInputs(e)
+                      }}
+                  />
 
-            </label>
+              </label>
 
-            <div>
-                Dont have an аккаунт?
-                <Link to="/register">Register</Link>
-            </div>
+              <div>
+                  Dont have an аккаунт?
+                  <Link to="/register">Register</Link>
+              </div>
 
-            <button
-                className={classes.Button}
-                onClick={(e) => {
-                    e.preventDefault()
-                }}
-            >
-                Login
-            </button>
-        </form>
+              <button
+                  className={classes.Button}
+                  onClick={(e) => {
+                      e.preventDefault()
+                  }}
+              >
+                  Login
+              </button>
+          </form>
+      </div>
     )
 }

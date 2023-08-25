@@ -1,7 +1,7 @@
 import {FC, PropsWithChildren, useState} from "react"
 import classes from './Aside.module.scss'
 import {CloseAsideIcon} from "../../icons/CloseAsideIcon"
-import {useAnimate} from "framer-motion"
+import {AnimatePresence, useAnimate} from "framer-motion"
 import cn from 'classnames'
 import {Profile} from "../Profile/Profile";
 
@@ -43,12 +43,15 @@ export const Aside: FC<PropsWithChildren<AsideProps>> = () => {
             </div>
 
             <div className={classes.Profile}>
-                {profileVisible && (
-                    <Profile
-                        user={{firstName: "Мотя", lastName: "Леймик", email: "test@test.com"}}
-                        isOpened={isOpened}
-                    />
-                )}
+                {/*?*/}
+                <AnimatePresence>
+                    {profileVisible && (
+                        <Profile
+                            user={{firstName: "Мотя", lastName: "Леймик", email: "test@test.com"}}
+                            isOpened={isOpened}
+                        />
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     )

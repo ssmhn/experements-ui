@@ -1,6 +1,6 @@
 import classes from "./Login.module.scss"
 import React, {FC, PropsWithChildren, useState} from "react"
-import {Link} from "react-router-dom";
+import { Link } from "@tanstack/react-router"
 
 interface LoginProps {
 
@@ -60,7 +60,7 @@ export const Login: FC<PropsWithChildren<LoginProps>> = ({}) => {
 
               <div>
                   Dont have an аккаунт?
-                  <Link to="/register">Register</Link>
+                  <Link to="/auth/register">Register</Link>
               </div>
 
               <button

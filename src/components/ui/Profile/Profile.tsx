@@ -1,8 +1,8 @@
 import classes from './Profile.module.scss'
 import React, {FC, PropsWithChildren} from "react"
 import {LogOutIcon} from "../../icons/LogOutIcon"
-import {Link} from "react-router-dom";
 import {motion} from "framer-motion";
+import {Link} from "@tanstack/react-router";
 
 interface User {
     firstName: string
@@ -57,7 +57,7 @@ export const Profile: FC<PropsWithChildren<ProfileProps>> = ({isOpened, user}) =
 
             <Link
                 className={classes.ProfileLogOutButton}
-                to="login"
+                to={'/auth/login'}
             >
                 <LogOutIcon/>
                 <p>Выйти</p>

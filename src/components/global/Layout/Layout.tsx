@@ -3,11 +3,12 @@ import classes from './Layout.module.scss'
 import {Aside} from "../../ui/Aside/Aside";
 import {Header} from "../../ui/Header/Header";
 import {Filters} from "../../ui/Filters/Filters";
+import {Outlet} from "@tanstack/react-router";
 
 interface LayoutProps {
 }
 
-export const Layout: FC<PropsWithChildren<LayoutProps>> = ({children}) => {
+export const Layout: FC<PropsWithChildren<LayoutProps>> = () => {
     return (
         <div className={classes.Layout}>
             <Aside />
@@ -17,7 +18,7 @@ export const Layout: FC<PropsWithChildren<LayoutProps>> = ({children}) => {
                 <main className={classes.Main}>
                     <div className={classes.Wrapper}>
                         <Filters />
-                        {children}
+                        <Outlet />
                     </div>
                 </main>
             </div>

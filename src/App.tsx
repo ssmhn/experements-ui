@@ -1,23 +1,13 @@
-import React from 'react';
-import {Layout} from "./components/global/Layout/Layout"
-import {Link, Routes, Route} from "react-router-dom";
-import {Login} from "./components/ui/Login/Login";
-import {Register} from "./components/ui/Register/Register";
+import {RouterProvider} from "@tanstack/react-router";
+import {router} from "./routing/router";
+import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
+import React from "react";
 
-function App() {
+export const App = () => {
     return (
-       <>
-           <Routes>
-               <Route path={"/"} element={<Layout/>}/>
-               <Route path={"/login"} element={<Login/>}/>
-               <Route path={"/register"} element={<Register/>}/>
-           </Routes>
-
-
-
-
-       </>
+        <>
+            <RouterProvider router={router} />
+            <ReactQueryDevtools />
+        </>
     )
 }
-
-export default App;

@@ -37,13 +37,13 @@ const authRoute = new Route({
 const loginRoute = new Route({
     getParentRoute: () => authRoute,
     path: '/login',
-    component: Login
+    component: () => <Login />,
 })
 
 const registerRoute = new Route({
     getParentRoute: () => authRoute,
     path: '/register',
-    component: Register
+    component: () => <Register />
 })
 
 const routeTree = rootRoute.addChildren([

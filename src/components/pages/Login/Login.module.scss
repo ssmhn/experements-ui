@@ -1,0 +1,42 @@
+@import '../../../css/common';
+
+.Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: 420px;
+  gap: 20px;
+  align-items: center;
+}
+
+.Title {
+  text-shadow: 3px 3px 10px #7F39FB, -3px -3px 10px #7F39FB;
+}
+
+.FormInput {
+  width: 100%;
+  position: relative;
+}
+
+.Button {
+  width: fit-content;
+  font-weight: 500;
+  font-size: 25px;
+  padding: 5px 15px;
+  border: 2px solid $divider;
+  border-radius: 30px;
+  color: $divider;
+  cursor: pointer;
+  transition: all .2s ease;
+
+  &Active {
+    border: 2px solid $primaryHover;
+    color: $primaryHover;
+  }
+}

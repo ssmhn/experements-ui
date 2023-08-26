@@ -1,6 +1,8 @@
 import classes from './Register.module.scss'
 import React, {useState} from "react"
 import {TextField} from "../../ui/TextField/TextField";
+import {motion} from "framer-motion";
+import {pageMotion} from "../../../motions/pageMotion";
 
 export const Register = () => {
     const [newUser, setNewUser] = useState<Record<string, string>>({name: "", surname: "", login: "", password: ""})
@@ -14,10 +16,15 @@ export const Register = () => {
     }
 
     return (
-        <div className={classes.Wrapper}>
-            <form className={classes.FormContainer}>
-                <h1 className={classes.Title}>Регистрация</h1>
-
+        <motion.div
+            key={1}
+            initial={'initial'}
+            animate={'animate'}
+            exit={'exit'}
+            variants={pageMotion}
+            className={classes.Wrapper}
+        >
+            <div className={classes.FormContainer}>
                 <TextField
                     user={newUser}
                     name={"name"}
@@ -56,7 +63,7 @@ export const Register = () => {
                 >
                     Зарегистрироваться
                 </button>
-            </form>
-        </div>
+            </div>
+        </motion.div>
     )
 }

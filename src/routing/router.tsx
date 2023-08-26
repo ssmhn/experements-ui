@@ -1,7 +1,7 @@
 import {Outlet, Route, Router, RouterContext} from "@tanstack/react-router";
 import {Layout} from "../components/global/Layout/Layout";
-import {Login} from "../components/ui/Login/Login";
-import {Register} from "../components/ui/Register/Register";
+import {Login} from "../components/pages/Login/Login";
+import {Register} from "../components/pages/Register/Register";
 import {TanStackRouterDevtools} from "@tanstack/router-devtools";
 import React from "react";
 import {QueryClient} from "@tanstack/react-query";

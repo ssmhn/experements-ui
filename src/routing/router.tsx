@@ -5,6 +5,7 @@ import {Register} from "../components/pages/Register/Register";
 import {TanStackRouterDevtools} from "@tanstack/router-devtools";
 import React from "react";
 import {QueryClient} from "@tanstack/react-query";
+import {Form} from "../components/global/Form/Form";
 
 export const queryClient = new QueryClient()
 
@@ -30,11 +31,7 @@ const indexRoute = new Route({
 const authRoute = new Route({
     getParentRoute: () => rootRoute,
     path: '/auth',
-    component: () => (
-        <div>
-            <Outlet />
-        </div>
-    )
+    component: Form
 })
 
 const loginRoute = new Route({

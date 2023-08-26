@@ -1,13 +1,8 @@
 import classes from './Register.module.scss'
-import React, {FC, PropsWithChildren, useState} from "react"
-// import {TextField} from "../Login/TextField/TextField";
+import React, {useState} from "react"
 import {TextField} from "../../ui/TextField/TextField";
 
-interface RegisterProps {
-
-}
-
-export const Register: FC<PropsWithChildren<RegisterProps>> = ({}) => {
+export const Register = () => {
     const [newUser, setNewUser] = useState<Record<string, string>>({name: "", surname: "", login: "", password: ""})
     const handleChangeInputs = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target

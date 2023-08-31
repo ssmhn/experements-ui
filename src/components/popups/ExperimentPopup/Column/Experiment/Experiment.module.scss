@@ -1,0 +1,12 @@
+@import '../../../../../css/common';
+
+.Item {
+  width: 100%;
+  padding: 25px 10px;
+  border-radius: 10px;
+  border: 1px solid $primary;
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}

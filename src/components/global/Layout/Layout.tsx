@@ -4,7 +4,7 @@ import {Aside} from "../../ui/Aside/Aside";
 import {Header} from "../../ui/Header/Header";
 import {Filters} from "../../ui/Filters/Filters";
 import {Outlet} from "@tanstack/react-router";
-import {Experiment} from "../../pages/Experiment/Experiment";
+import {ExperimentPopup} from "../../popups/ExperimentPopup/ExperimentPopup";
 
 interface LayoutProps {
 }
@@ -20,10 +20,12 @@ export const Layout: FC<PropsWithChildren<LayoutProps>> = () => {
                     <div className={classes.Wrapper}>
                         <Filters />
                         <Outlet />
-                        {/*<Experiment/>*/}
                     </div>
                 </main>
             </div>
+
+            <ExperimentPopup />
+
         </div>
     )
 }

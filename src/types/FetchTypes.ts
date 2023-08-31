@@ -1,4 +1,5 @@
-import {ParamType} from "./global";
+import {ParamType, StatusType} from "./global";
+import {ModelType} from "./ModelsType";
 
 export type CreateModelType = {
     nameModel: string,
@@ -23,4 +24,16 @@ export type FeatureType = {
     serializedData: string[]
 }
 
-export type ResponseType = string
+export type ResponseType = {
+    status: 'SENT_FOR_CREATE',
+    data: {}
+} | {
+    status: 'SENT_FOR_TRAIN',
+    data: {}
+} | {
+    status: 'SENT_FOR_PREDICT',
+    data: {}
+} | {
+    status: Omit<StatusType, 'SENT_FOR_CREATE' | 'SENT_FOR_TRAIN' | 'SENT_FOR_PREDICT'>,
+    data: ModelType
+}

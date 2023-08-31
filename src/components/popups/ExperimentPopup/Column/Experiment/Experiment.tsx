@@ -7,9 +7,11 @@ interface ExperimentProps {
     className?: string
     task: TaskType
     index: number
+    click?: boolean
+    showFormToggler: (id: string) => void
 }
 
-export const Experiment: FC<PropsWithChildren<ExperimentProps>> = ({task, index}) => {
+export const Experiment: FC<PropsWithChildren<ExperimentProps>> = ({task, index, click, showFormToggler}) => {
     return (
         <Draggable draggableId={task.id} index={index}>
             {(provided) => (
@@ -17,6 +19,9 @@ export const Experiment: FC<PropsWithChildren<ExperimentProps>> = ({task, index}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                     ref={provided.innerRef}
+                    onClick={() => {
+                        click && showFormToggler(task.id)
+                    }}
                     className={classes.Item}
                 >
                     {task.id}

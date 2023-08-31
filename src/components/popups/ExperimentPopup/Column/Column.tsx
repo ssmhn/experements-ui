@@ -9,9 +9,10 @@ interface ColumnProps {
     className?: string
     column: ColumnType
     tasks: TaskType[]
+    showFormToggler: (id: string) => void
 }
 
-export const Column: FC<PropsWithChildren<ColumnProps>> = ({className, column, tasks}) => {
+export const Column: FC<PropsWithChildren<ColumnProps>> = ({className, column, tasks, showFormToggler}) => {
     return (
         <div className={cn(classes.Column, className)}>
             <Droppable droppableId={column.id}>
@@ -22,7 +23,7 @@ export const Column: FC<PropsWithChildren<ColumnProps>> = ({className, column, t
                         className={classes.Items}
                     >
                         {tasks.map((el, i) => (
-                            <Experiment key={el.id} task={el} index={i} />
+                            <Experiment key={el.id} showFormToggler={showFormToggler} click={column.id === 'column-2'} task={el} index={i} />
                         ))}
                     </div>
                 )}

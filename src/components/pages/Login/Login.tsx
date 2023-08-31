@@ -47,7 +47,7 @@ export const Login = () => {
                         newUser.surname) ? classes.ButtonActive : ""}`}
                     onClick={(e) => e.preventDefault()}
                 >
-                    Зарегистрироваться
+                    Войти
                 </button>
             </div>
         </motion.div>

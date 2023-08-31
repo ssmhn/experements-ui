@@ -11,13 +11,15 @@
   color: $text;
   padding-left: 30px;
   width: 100%;
-  height: 50px;
-  border-radius: 40px;
-  border: 2px solid $divider;
+  height: 45px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
   transition: all .2s ease;
 
   &:focus {
     border-color: $primary;
+    background: none;
   }
 
   &Active {
@@ -33,15 +35,15 @@
   left: 30px;
   color: $divider;
   position: absolute;
-  background: $bg;
+  background: none;
   padding: 0 5px;
   transition: all .3s ease;
 }
-
 
 
 .Input:focus + label,
 .Input:not(:placeholder-shown) + label {
   top: 0;
   color: $primary;
+  background: #383838;
 }

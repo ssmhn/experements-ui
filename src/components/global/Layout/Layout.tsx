@@ -20,6 +20,7 @@ export const Layout: FC<PropsWithChildren<LayoutProps>> = () => {
                     <div className={classes.Wrapper}>
                         <Filters />
                         <Outlet />
+
                     </div>
                 </main>
             </div>

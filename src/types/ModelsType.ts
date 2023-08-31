@@ -1,8 +1,10 @@
+import {StatusType} from "./global";
+
 export type ModelsType = ModelsType[]
 
 export type ModelType = {
     name: string,
-    status: 'CREATE',
+    status: StatusType,
     predictLabel: string,
     distributions: string,
     algorithm: string,

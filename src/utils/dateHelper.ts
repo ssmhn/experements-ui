@@ -25,8 +25,8 @@ const changeDateView = (num: number) => {
     return num + ''
 }
 
-export const DateHelper = (userDate?: string, separator?: string) => {
-    const date = userDate ? new Date(Date.parse(userDate)) : new Date()
+export const DateHelper = (userDate?: number | string | Date, separator?: string) => {
+    const date = userDate ? new Date(userDate) : new Date()
 
     const day = date.getDate()
     const monthId = date.getMonth() + 1
@@ -40,7 +40,7 @@ export const DateHelper = (userDate?: string, separator?: string) => {
 
     const daysPerYearStart = Math.round((Date.parse(date.toDateString()) - Date.parse(firstDayPerYear)) / 86400000)
 
-    const weeksCount = daysPerYearStart / 7
+    const weeksCount = Math.round(daysPerYearStart / 7)
 
     const month = indexToWord(monthId - 1)
 
@@ -52,6 +52,13 @@ export const DateHelper = (userDate?: string, separator?: string) => {
 
     const fullDate = `${doubleCharDay}${separator || '.'}${doubleCharMonth}${separator || '.'}${year}`
     const fullDateReverse = `${year}${separator || '.'}${doubleCharMonth}${separator || '.'}${doubleCharDay}`
+
+    const getDateInGenitiveCase = (dateParam: Date = date) => {
+        return dateParam.toLocaleString('ru', {
+            day: 'numeric',
+            month: 'long'
+        })
+    }
 
     return {
         day,
@@ -66,7 +73,8 @@ export const DateHelper = (userDate?: string, separator?: string) => {
         hour,
         minutes,
         daysPerYearStart,
-        weeksCount
+        weeksCount,
+        getDateInGenitiveCase
     }
 
 }

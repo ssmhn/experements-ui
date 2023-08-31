@@ -1,4 +1,4 @@
-import {FC, PropsWithChildren} from "react"
+import {FC, PropsWithChildren, useLayoutEffect, useRef} from "react"
 import classes from './Layout.module.scss'
 import {Aside} from "../../ui/Aside/Aside";
 import {Header} from "../../ui/Header/Header";
@@ -10,6 +10,12 @@ interface LayoutProps {
 }
 
 export const Layout: FC<PropsWithChildren<LayoutProps>> = () => {
+    const path = useRef('')
+
+    useLayoutEffect(() => {
+        path.current = window.location.pathname
+    }, []);
+
     return (
         <div className={classes.Layout}>
             <Aside />
@@ -18,7 +24,9 @@ export const Layout: FC<PropsWithChildren<LayoutProps>> = () => {
 
                 <main className={classes.Main}>
                     <div className={classes.Wrapper}>
-                        <Filters />
+                        {!path.current.includes('/experiment') && (
+                            <Filters />
+                        )}
                         <Outlet />
                     </div>
                 </main>

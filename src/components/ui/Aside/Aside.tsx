@@ -43,7 +43,6 @@ export const Aside: FC<PropsWithChildren<AsideProps>> = () => {
             </div>
 
             <div className={classes.Profile}>
-                {/*?*/}
                 <AnimatePresence>
                     {profileVisible && (
                         <Profile

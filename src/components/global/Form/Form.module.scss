@@ -9,7 +9,7 @@
 }
 
 .Container {
-  width: 40%;
+  max-width: 576px;
   padding: 60px;
   height: 500px;
   background: $content;

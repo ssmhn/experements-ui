@@ -6,6 +6,7 @@ import {TanStackRouterDevtools} from "@tanstack/router-devtools";
 import React from "react";
 import {QueryClient} from "@tanstack/react-query";
 import {Form} from "../components/global/Form/Form";
+import {Experiment} from "../components/pages/Experiment/Experiment";
 
 export const queryClient = new QueryClient()
 
@@ -46,12 +47,21 @@ const registerRoute = new Route({
     component: () => <Register />
 })
 
+//
+const experimentRoute = new Route({
+    getParentRoute: () => indexRoute,
+    path: '/experiment',
+    component: () => <Experiment/>
+})
+//
+
 const routeTree = rootRoute.addChildren([
     indexRoute,
     authRoute.addChildren([
         loginRoute,
         registerRoute
-    ])
+    ]),
+    experimentRoute
 ])
 
 export const router = new Router({

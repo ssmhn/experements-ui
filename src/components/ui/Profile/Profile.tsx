@@ -1,5 +1,5 @@
 import classes from './Profile.module.scss'
-import React, {FC, PropsWithChildren} from "react"
+import React, {FC, PropsWithChildren, useState} from "react"
 import {LogOutIcon} from "../../icons/LogOutIcon"
 import {motion} from "framer-motion";
 import {Link} from "@tanstack/react-router";
@@ -16,6 +16,12 @@ interface ProfileProps {
 }
 
 export const Profile: FC<PropsWithChildren<ProfileProps>> = ({isOpened, user}) => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+    const handleLogout = () => {
+        setIsLoggedIn(l => !l)
+    }
+
     return (
         <motion.div
             initial={{
@@ -36,7 +42,8 @@ export const Profile: FC<PropsWithChildren<ProfileProps>> = ({isOpened, user}) =
 
             className={classes.Profile}>
 
-            <div className={classes.ProfileCard}>
+            {isLoggedIn && (
+                <div className={classes.ProfileCard}>
 
                 <span
                     className={classes.ProfileAvatar}
@@ -44,24 +51,35 @@ export const Profile: FC<PropsWithChildren<ProfileProps>> = ({isOpened, user}) =
                     {user.firstName.charAt(0) + user.lastName.charAt(0)}
                 </span>
 
-                <div className={classes.ProfileInfo}>
-                    <p
-                        className={classes.UserName}
-                    >
-                        {`${user.firstName} ${user.lastName}`}
-                    </p>
+                    <div className={classes.ProfileInfo}>
+                        <p
+                            className={classes.UserName}
+                        >
+                            {`${user.firstName} ${user.lastName}`}
+                        </p>
 
-                    <p className={classes.UserEmail}>{user.email}</p>
+                        <p className={classes.UserEmail}>{user.email}</p>
+                    </div>
                 </div>
-            </div>
+            )}
 
-            <Link
-                className={classes.ProfileLogOutButton}
-                to={'/auth/login'}
-            >
-                <LogOutIcon/>
-                <p>Выйти</p>
-            </Link>
+            {isLoggedIn ? (
+                <div
+                    className={classes.ProfileLogOutButton}
+                    onClick={handleLogout}
+                >
+                    <LogOutIcon/>
+                    Выйти
+                </div>
+            ) : (
+                <Link
+                    className={classes.ProfileLogOutButton}
+                    to={'/auth/login'}
+                >
+                    <LogOutIcon/>
+                    Войти
+                </Link>
+            )}
 
         </motion.div>
     )

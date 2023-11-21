@@ -1,4 +1,3 @@
-import classes from './LogOutIcon.module.scss'
 import {FC, PropsWithChildren} from "react"
 
 interface LogOutIconProps {

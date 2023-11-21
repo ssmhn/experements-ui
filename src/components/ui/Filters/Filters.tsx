@@ -77,6 +77,7 @@ export const Filters: FC<PropsWithChildren<FiltersProps>> = () => {
                 return prev
             })
         }
+        // eslint-disable-next-line
     }, [filtersData.period]);
 
     useEffect(() => {
@@ -87,12 +88,14 @@ export const Filters: FC<PropsWithChildren<FiltersProps>> = () => {
         })
 
         fillRangeSelect(period.value)
+        // eslint-disable-next-line
     }, []);
 
     useEffect(() => {
         const period = filtersData.period.value
 
         fillRangeSelect(period)
+        // eslint-disable-next-line
     }, [filtersData.period])
 
     return (

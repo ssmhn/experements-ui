@@ -1,5 +1,5 @@
 import {FC, PropsWithChildren} from "react"
-import {Bar, Doughnut} from "react-chartjs-2";
+import {Doughnut} from "react-chartjs-2";
 import {Chart as ChartJS, ArcElement, Tooltip, Legend} from "chart.js";
 
 interface PieChartProps {
@@ -11,7 +11,7 @@ ChartJS.register(
     ArcElement
 )
 
-export const PieChart: FC<PropsWithChildren<PieChartProps>> = ({}) => {
+export const PieChart: FC<PropsWithChildren<PieChartProps>> = () => {
 
     const data = {
         labels: ["red", "blue", "yellow", "green", "purple", "orange"],

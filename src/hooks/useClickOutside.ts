@@ -12,5 +12,6 @@ export const useClickOutside = <T extends HTMLElement>(ref: RefObject<T>, cb: ()
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
+        // eslint-disable-next-line
     }, [ref]);
 }

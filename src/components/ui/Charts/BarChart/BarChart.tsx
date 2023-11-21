@@ -13,7 +13,7 @@ ChartJS.register(
     BarElement
 )
 
-export const BarChart: FC<PropsWithChildren<BarChartProps>> = ({}) => {
+export const BarChart: FC<PropsWithChildren<BarChartProps>> = () => {
 
     const data = {
         labels: ["red", "blue", "yellow", "green", "purple", "orange"],

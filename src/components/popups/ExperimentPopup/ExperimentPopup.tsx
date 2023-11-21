@@ -9,7 +9,6 @@ import {ColumnType} from "../../../types/DNDTypes";
 import {v4} from 'uuid'
 
 interface ExperimentPopupProps {
-    className?: string
 }
 
 export const ExperimentPopup: FC<PropsWithChildren<ExperimentPopupProps>> = () => {
@@ -80,6 +79,7 @@ export const ExperimentPopup: FC<PropsWithChildren<ExperimentPopupProps>> = () =
         const root = document.documentElement
         root.style.setProperty('--right-width', (wrapperRef.current.offsetWidth / 4) + 'px')
         setRightColWidth(wrapperRef.current.offsetWidth / 4)
+        // eslint-disable-next-line
     }, [wrapperRef.current]);
 
     return (

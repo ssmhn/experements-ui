@@ -15,7 +15,7 @@ ChartJS.register(
 )
 
 
-export const LineChart: FC<PropsWithChildren<LineChartProps>> = ({}) => {
+export const LineChart: FC<PropsWithChildren<LineChartProps>> = () => {
 
     const data = {
         labels: ["red", "blue", "yellow", "green", "purple", "orange"],

@@ -8,7 +8,7 @@ interface ExperimentProps {
 
 }
 
-export const Experiment: FC<PropsWithChildren<ExperimentProps>> = ({}) => {
+export const Experiment: FC<PropsWithChildren<ExperimentProps>> = () => {
 
 
     return (
